@@ -8,7 +8,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.tree import DecisionTreeClassifier
 
 # Load dataset
-dataset = pandas.read_csv('file://localhost/Volumes/kiva/data-analysis/fund_time_prediction/expiration_prediction/loan_data.csv')
+dataset = pandas.read_csv('./loan_data.csv')
 
 # Split-out validation dataset
 array = dataset.values
