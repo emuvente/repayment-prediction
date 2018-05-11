@@ -1,5 +1,6 @@
 # Load libraries
 import pandas
+import numpy
 from sklearn import model_selection
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
@@ -12,7 +13,7 @@ dataset = pandas.read_csv('file://localhost/Volumes/kiva/data-analysis/fund_time
 # Split-out validation dataset
 array = dataset.values
 X = array[:,0:8]
-Y = array[:,8] == 100
+Y = numpy.around(array[:,8] * 0.015)
 validation_size = 0.20
 seed = 7
 X_train, X_validation, Y_train, Y_validation = model_selection.train_test_split(X, Y, test_size=validation_size, random_state=seed)
